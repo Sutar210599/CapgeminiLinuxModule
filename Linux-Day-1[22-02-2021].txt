@@ -1,0 +1,13 @@
+Questions
+1) Use man command to find out the resources to change the hostname of my
+computer.
+2) Find out which version of kernel using (man command)
+
+Answers:
+1)man hostname
+sudo hostname -b new_host_name
+
+2) uname -r
+
+Output:
+5.10.0-17.1-liquorix-amd64

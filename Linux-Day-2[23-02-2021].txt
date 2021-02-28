@@ -1,0 +1,29 @@
+Questions
+1) Copy the files
+- create three folder in a particular location as /tmp/data/bolly
+/tmp/data/holly /tmp/data/tolly [only 1 command]
+-> go at /etc and copy all the files you have starting with name a,b,c or d ,
+take that data to the /tmp/data location
+2)- Take the above files, if the file name starts with a or b take to bolly
+3) c or d -> holly
+4) Take those file which are bigger in amount in size( file > 40M) -> tolly
+5) - You can create the tar file of each folder {bolly, holly, tolly} in a
+desktop folder named as "MoviesData" & make sure the tar files are
+present with its respective names
+
+Answers:
+1) mkdir  -p ~/tmp/data/holly ~/tmp/data/bolly ~/tmp/data/tolly
+
+2) cp   /etc/[abcdABCD]* ~/tmp/data
+
+3) mv  ~/tmp/data/[abAB]* ~/tmp/data/bolly
+
+mv  ~/tmp/data/[cdCD]* ~/tmp/data/holly
+
+4)find ~/tmp/data -type f -size +40M -exec mv  -nv {} ~/tmp/data/tolly/ \;
+
+5)
+tar -cvf ~/Desktop/MoviesData/bolly.tar ~/tmp/data/bolly
+tar -cvf ~/Desktop/MoviesData/tolly.tar ~/tmp/data/tolly
+tar -cvf ~/Desktop/MoviesData/holly.tar ~/tmp/data/holly
+

@@ -1,0 +1,44 @@
+1) - You need to set the umask value to 022 & it should be permanent
+-> Try to see the files & folder created after checking the umask
+2) -> Again change the umask value to the default value
+3) -> You need create files by root & see that other user & group can't access
+them
+-> Files created by other user can be accessed by the group owners
+4)
+Create a directory on the desktop with the name as CapgeminiFolder
+- make sure the members of the group i.e "BigDataEmplyee" should be able to
+access the data inside the drectory
+- and other users can't access it
+- Make sure one thing one user can't access or write the file of other user
+present in the above shared directory
+- But make sure, the user {manager} he should be able to access all the data
+& can remove the files
+
+Answers:
+umask 022
+touch file.txt
+ls -lrt file.txt
+-rw-r--r-- 1 sutar sutar 0 Feb 26 00:00 file.txt
+
+umask 002
+
+sudo su
+
+touch fileperm.txt
+ls -l fileperm.txt
+-rw-r--r-- 1 root root 0 Feb 28 20:13 fileperm.txt
+chmod 600 fileperm.txt
+-rw------- 1 root root 0 Feb 28 20:13 fileperm.txt
+
+
+
+mkdir Desktop/CapgeminiFolder
+sudo addgroup BigDataEmployee
+ls -ld CapgeminiFolder
+drwxrwx--- 2 sutar bigdataemployee 4096 Feb 28 20:20 CapgeminiFolder
+
+sudo chgrp bigdataemployee CapgeminiFolder
+chmod 770 CapgeminiFolder
+ls -ld CapgeminiFolder
+
+drwxrwx--- 2 sutar bigdataemployee 4096 Feb 28 20:20 CapgeminiFolder

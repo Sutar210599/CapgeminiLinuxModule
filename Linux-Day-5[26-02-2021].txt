@@ -1,0 +1,8 @@
+Questions:
+1) Sort the array, input (number ) will be given by user
+2) Take array size, element from user & take that array that need to be search &
+find the index position where the array is present.
+
+Answers: 
+1) Seperate file named arraySort.sh uploaded
+2) Seperate file names arraySearch.sh uploaded

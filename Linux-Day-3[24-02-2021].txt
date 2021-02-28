@@ -1,0 +1,33 @@
+Questions:
+1) Create 4 users with names tushar, nana, jaya and maulik
+2) Set expiry of password to 90 days
+3) Create group marketing add tushar , nana
+4) Create group it add jaya, maulik
+5) Create group as capgemini and add all users as secondary group to it.
+6) Add a new user with any name and the user id for this one should be 2001
+7) Also set the shell for that user to {sh shell}
+8) add this user into the existing group named capgemini and give its comment
+while creating user as "Capgemini employee for Big Data"
+6,7 and 8 in single command - don't use semicolon and & operator
+
+Answers:
+1) sudo adduser tushar;sudo adduser nana; sudo adduser maulik; sudo adduser jaya
+
+2) passwd tushar -x 90; passwd nana -x 90; passwd maulik -x 90;passwd jaya -x 90
+
+3)sudo addgroup marketing
+sudo usermod -aG marketing tushar
+sudo usermod -aG marketing nana
+
+4)
+sudo usermod -aG it maulik
+sudo usermod -aG it jaya
+
+5)
+sudo usermod -aG capgemini tushar
+sudo usermod -aG capgemini nana
+sudo usermod -aG capgemini maulik
+sudo usermod -aG capgemini jaya
+
+6,7,8) 
+sudo useradd -u 2001 -s /bin/sh -G capgemini -c "Big data" sid
